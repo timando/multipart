@@ -313,6 +313,7 @@ impl<'d> PreparedFields<'d> {
         }
 
         content_len += boundary.len() as u64;
+        content_len += text_data.len() as u64;
 
         Ok(PreparedFields {
             text_data: Cursor::new(text_data),
