@@ -311,7 +311,8 @@ impl<'d> PreparedFields<'d> {
         } else {
             boundary.push_str("--");
         }
-
+        
+        content_len += text_data.len() as u64;
         content_len += boundary.len() as u64;
 
         Ok(PreparedFields {
